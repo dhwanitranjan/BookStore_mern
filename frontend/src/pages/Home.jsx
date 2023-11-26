@@ -13,8 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    Services()
-      .GetAllBooks()
+    Services.GetAllBooks()
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);

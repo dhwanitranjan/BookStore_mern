@@ -16,8 +16,7 @@ const EditBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    Services()
-      .GetBookById(id)
+    Services.GetBookById(id)
       .then((response) => {
         setAuthor(response.data.author);
         setPublishYear(response.data.publishYear);
@@ -38,8 +37,7 @@ const EditBook = () => {
       publishYear,
     };
     setLoading(true);
-    Services()
-      .EditBook(id, data)
+    Services.EditBook(id, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Edited successfully", { variant: "success" });

@@ -13,8 +13,7 @@ const DeleteBook = () => {
 
   const handleDeleteBook = () => {
     setLoading(true);
-    Services()
-      .DeleteBook(id)
+    Services.DeleteBook(id)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Deleted successfully", { variant: "success" });

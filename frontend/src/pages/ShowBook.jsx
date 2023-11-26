@@ -11,8 +11,7 @@ const ShowBook = () => {
 
   useEffect(() => {
     setLoading(true);
-    Services()
-      .GetBookById(id)
+    Services.GetBookById(id)
       .then((response) => {
         setBook(response.data);
         setLoading(false);

@@ -20,8 +20,7 @@ const CreateBooks = () => {
       publishYear,
     };
     setLoading(true);
-    Services()
-      .CreateBook(data)
+    Services.CreateBook(data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Created successfully", { variant: "success" });

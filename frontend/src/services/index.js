@@ -1,23 +1,22 @@
 import axios from "axios";
+import { API_PORT_LINK } from "../constants";
 
-const Services = () => {
-  return {
-    GetAllBooks: function () {
-      return axios.get("http://localhost:5555/books");
-    },
-    GetBookById: function (id) {
-      return axios.get(`http://localhost:5555/books/${id}`);
-    },
-    CreateBook: function (data) {
-      return axios.post("http://localhost:5555/books", data);
-    },
-    DeleteBook: function (id) {
-      return axios.delete(`http://localhost:5555/books/${id}`);
-    },
-    EditBook: function (id, data) {
-      return axios.put(`http://localhost:5555/books/${id}`, data);
-    },
-  };
+const Services = {
+  GetAllBooks: function () {
+    return axios.get(`${API_PORT_LINK}/books`);
+  },
+  GetBookById: function (id) {
+    return axios.get(`${API_PORT_LINK}/books/${id}`);
+  },
+  CreateBook: function (data) {
+    return axios.post(`${API_PORT_LINK}/books`, data);
+  },
+  DeleteBook: function (id) {
+    return axios.delete(`${API_PORT_LINK}/books/${id}`);
+  },
+  EditBook: function (id, data) {
+    return axios.put(`${API_PORT_LINK}/books/${id}`, data);
+  },
 };
 
 export default Services;
